@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amogh Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: white;
+    }
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #1f1f1f, #3c3c3c);
+    }
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .skill-box, .project-box {
+      background: rgba(255,255,255,0.05);
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 12px;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ffcc00;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Amogh Kulkarni</h1>
+  <p>Performance Engineer | LoadRunner | JMeter | NeoLoad | API Testing</p>
+</header>
+
+<section>
+  <h2>Skills</h2>
+  <div id="skills"></div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="project-box">Performance Testing for Insurance Application using NeoLoad</div>
+  <div class="project-box">LoadRunner RTE Script for Mainframe (TN3270)</div>
+  <div class="project-box">API Load Testing for Claims System (JMeter)</div>
+</section>
+
+<section style="text-align:center;">
+  <h2>Resume</h2>
+  <a href="Amogh_Kulkarni_3_YOE_PT (1) (1).pdf" download class="resume-btn">Download My Resume</a>
+</section>
+
+<script>
+  const skills = [
+    { name: "JMeter", rating: 5 },
+    { name: "LoadRunner", rating: 4 },
+    { name: "NeoLoad", rating: 4 },
+    { name: "API Testing", rating: 4 },
+    { name: "Performance Analysis", rating: 5 },
+    { name: "Correlation & Regex", rating: 5 },
+    { name: "Linux Monitoring", rating: 3 },
+    { name: "Mainframe RTE", rating: 3 }
+  ];
+
+  const skillsContainer = document.getElementById('skills');
+
+  skills.forEach(skill => {
+    const div = document.createElement('div');
+    div.className = 'skill-box';
+    div.textContent = `${skill.name} - ${'★'.repeat(skill.rating)}${'☆'.repeat(5-skill.rating)}`;
+    skillsContainer.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
